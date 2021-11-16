@@ -3,17 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/MouseHandler.java</file>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/Button.java</file>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/Gui.java</file>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/Draw_Upgrades.java</file>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/Main.java</file>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/CoinCounter.java</file>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/Draw.java</file>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/Draw_Buttons.java</file>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/IL.java</file>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/MouseCollision.java</file>
-            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/pack1/Upgrade.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/GUI/Button.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/Draw/Draw_Upgrades.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/Draw/Draw_Main.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/Actions/MouseHandler.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/Actions/Main.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/Draw/Draw_Buttons.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/Actions/MouseCollision.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/GUI/Upgrade.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/GUI/Gui.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/Actions/CoinCounter.java</file>
+            <file>file:/C:/Users/Ágica/Desktop/Clicker%20Cat/src/GUI/IL.java</file>
         </group>
     </open-files>
 </project-private>
