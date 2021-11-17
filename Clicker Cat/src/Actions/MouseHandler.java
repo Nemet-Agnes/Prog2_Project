@@ -76,7 +76,14 @@ public class MouseHandler implements MouseListener, MouseMotionListener, MouseWh
                 Main.cpc+=Main.cpc /2;
             }
         }
-        
+        //SAVE BUTTON:
+        if(mc.inside(e.getX(), e.getY(), Gui.bSave)){
+            Data.saveData();
+        }
+        //LOAD BUTTON:
+        if(mc.inside(e.getX(), e.getY(), Gui.bLoad)){
+            Data.loadData();
+        }
     }
     
     @Override

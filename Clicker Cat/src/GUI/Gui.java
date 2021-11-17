@@ -8,6 +8,7 @@ import Draw.Draw_Upgrades;
 import javax.swing.JFrame;
 import Actions.Main;
 import Actions.MouseHandler;
+import Draw.Draw_Options;
 
 public class Gui {
     
@@ -15,6 +16,7 @@ public class Gui {
     Draw_Main d;
     Draw_Buttons db;
     Draw_Upgrades du;
+    Draw_Options dop;
     IL il = new IL();
     
     public final int width= 1200;
@@ -25,6 +27,7 @@ public class Gui {
     public static Button bOptions;
     
     public static Button ugClicker, bCat;
+    public static Button bSave, bLoad;
     
     
     
@@ -41,6 +44,9 @@ public class Gui {
         
         bCat = new Button(width/4-96,150,192,192 );
         ugClicker=new Button(width/4-75, 500, 150,50);
+        
+        bSave = new Button((width/4)*3-100,200,200,50);
+        bLoad = new Button((width/4)*3-100,400,200,50);
         
         for(int i=0; i<upgrade.length;i++){
             ugButton[i] = new Button();
@@ -75,6 +81,14 @@ public class Gui {
         du.addMouseListener(new MouseHandler());
         du.addMouseMotionListener(new MouseHandler());
         jf.add(du);
+        
+        dop= new Draw_Options();
+        dop.setSize(width,height);
+        dop.setVisible(true);
+        dop.requestFocus();
+        dop.addMouseListener(new MouseHandler());
+        dop.addMouseMotionListener(new MouseHandler());
+        jf.add(dop);
         
         
         

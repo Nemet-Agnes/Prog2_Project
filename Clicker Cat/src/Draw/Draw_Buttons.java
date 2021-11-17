@@ -57,7 +57,7 @@ public class Draw_Buttons extends JLabel{
         //Button Achievement
         
         if(Gui.bAchievements.isHover()){
-            g.setColor(new Color(84,84,84,150));
+            g.setColor(new Color(84,84,84,150));//150
             g.fillRect(Gui.bUpgrades.getX(),Gui.bUpgrades.getY(), Gui.bUpgrades.getWidth(), Gui.bUpgrades.getHeight());
         }else{
             g.setColor(Color.white);
