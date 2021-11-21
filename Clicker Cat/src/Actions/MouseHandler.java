@@ -91,7 +91,9 @@ public class MouseHandler implements MouseListener, MouseMotionListener, MouseWh
         //Cat Button
         if(Gui.bCat.isActive()){
             Gui.bCat.setActive(false);
-           // Main.coins += Main.cpc;
+            Main.coins += Main.cpc;
+            
+            Main.clickCount++;
         }
         
     }

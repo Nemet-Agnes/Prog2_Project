@@ -16,14 +16,17 @@ public class Upgrade {
     int number;
     int cost;
     
-    public Upgrade(int y, String name, BufferedImage imgage, int number, int cost){
+    public Upgrade( String name, BufferedImage imgage, int cost){
         this.x=gui.width/2;
-        this.y=y;
         this.name=name;
         this.image=image;
-        this.number=number;
+        this.number=0;
         this.cost=cost;
         
+    }
+    
+    public static int setYCoord(int index){
+        return 150+ index*200;
     }
     public static void cpsUpgrade(int index){
         switch(index){

@@ -10,8 +10,9 @@ import Actions.Main;
 
 public class IL {
     public BufferedImage ibg;
-    public BufferedImage iug[] = new BufferedImage[Main.ugNumber-2];
+    public BufferedImage iug[] = new BufferedImage[Main.ugNumber];
     public BufferedImage iCat1, iCat2;
+    public BufferedImage iachievement [] = new BufferedImage[Main.achievementNumber];
     
     public IL(){
         
@@ -22,6 +23,10 @@ public class IL {
             
             for(int i=0;i<iug.length;i++){
                 iug[i] = ImageIO.read(new File("rsc/ug" + (i+1)+ ".png"));
+            }
+            
+            for (int i =0; i<iachievement.length;i++){
+                iachievement[i] = ImageIO.read(new File("rsc/ach"+(i+1)+".png"));
             }
             
         } catch (IOException e) {

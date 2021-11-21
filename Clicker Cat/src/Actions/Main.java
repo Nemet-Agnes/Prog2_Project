@@ -9,6 +9,9 @@ public class Main {
     public static double cps = 0; // coins per sec
     public static double cpc = 1; // coins per click
     public static int ugNumber =4; // upgrade number
+    public static int achievementNumber=10;
+    
+    public static int clickCount=0;
     
     public static int ugClickerCost = 10;
     
@@ -18,6 +21,8 @@ public class Main {
         g.createGui();
         
         new CoinCounter();
+        
+        new AchievementCheck();
     }
     
 }

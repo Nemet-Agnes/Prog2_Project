@@ -24,21 +24,17 @@ public class Data {
         // létrehoz
         if(!data.folder.exists()){
             data.folder.mkdirs();
-            System.out.println("The folder has been created!");
-        }else{
-            System.out.println("The folder already exists!");
+            
         }
         
         if(!data.file.exists()){
             try {
                 data.file.createNewFile();
-                System.out.println("save.txt has been created!");
+                
             } catch (IOException e) {
                 e.printStackTrace();
             }
             
-        }else{
-            System.out.println("save.txt already exists!");
         }
         //mentés
         data.sb.append(Main.coins); 
@@ -56,6 +52,20 @@ public class Data {
             data.sb.append(Gui.upgrade[i].getCost());
             data.sb.append("\n");
         }
+        
+        data.sb.append(Main.clickCount);
+        data.sb.append("\n");
+        
+        for(int i=0; i< Main.achievementNumber;i++){
+            if(Gui.achievement[i].isUnlocked()){
+                data.sb.append("1");
+                data.sb.append("\n");
+            }else{
+                data.sb.append("0");
+                data.sb.append("\n");
+            }
+        }
+        
         try{
         OutputStream stream = new FileOutputStream(data.file);
         String s = data.sb.toString();
@@ -90,6 +100,16 @@ public class Data {
                         Gui.upgrade[i].setNumber(Integer.parseInt(sc.nextLine()));
                         Gui.upgrade[i].setCost(Integer.parseInt(sc.nextLine()));
                     }
+                    
+                     Main.clickCount = Integer.parseInt(sc.nextLine());
+                     for(int i=0; i<Main.achievementNumber;i++){
+                         if(sc.nextLine().equals("1")){
+                             Gui.achievement[i].setUnlocked(true);
+                            
+                         }else{
+                             Gui.achievement[i].setUnlocked(false);
+                         }
+                     }
                     
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();

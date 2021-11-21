@@ -6,6 +6,7 @@ import Draw.Draw_Upgrades;
 import javax.swing.JFrame;
 import Actions.Main;
 import Actions.MouseHandler;
+import Draw.Draw_Achievements;
 import Draw.Draw_Options;
 
 public class Gui {
@@ -15,6 +16,7 @@ public class Gui {
     Draw_Buttons db;
     Draw_Upgrades du;
     Draw_Options dop;
+    Draw_Achievements a;
     IL il = new IL();
     
     public final int width= 1200;
@@ -29,7 +31,8 @@ public class Gui {
     public static Button ugClicker, bCat;
     public static Button bSave, bLoad;
     
-    
+    public static Achievement achievement[] = new Achievement[Main.achievementNumber];
+    public static AchievementSlider achievementSlider[] = new AchievementSlider[Main.achievementNumber]; 
     
     public static Button ugButton[]= new Button[Main.ugNumber];
    
@@ -57,13 +60,39 @@ public class Gui {
             
         }
         
-        upgrade[0]= new Upgrade(150,"Cat Bed!",il.iug[0],0,50); //
-        upgrade[1]= new Upgrade(350,"Cat Tower",il.iug[1],0,100);
+        upgrade[0]= new Upgrade("Cat Bed!",il.iug[0],50); //
+        upgrade[1]= new Upgrade("Cat Tower",il.iug[1],100);
         
-        upgrade[2]= new Upgrade(550,"CatNip",il.iug[0],0,5000);
-        upgrade[3]= new Upgrade(750,"Mousetrap ",il.iug[0],0,50000);
+        upgrade[2]= new Upgrade("CatNip",il.iug[2],5000);
+        upgrade[3]= new Upgrade("Mousetrap ",il.iug[3],50000);
+        
+        for(int i=0; i<upgrade.length;i++){
+            upgrade[i].setY(Upgrade.setYCoord(i));
+        }
+        
         
         maxHeight = (upgrade.length *(150+50));
+        
+        
+        int temp =0;
+        int yV =0;
+        int xV=0;
+        for(int i =0; i<achievement.length;i++){
+            achievement[i] = new Achievement(width /2 +7+ xV,170+yV,il.iachievement[i]);
+            
+            temp++;
+            
+            if(temp % 12 ==0){
+                temp =0;
+                yV +=52;
+            }
+            
+            xV= temp *50+temp*2;
+        }
+        
+        for(int i=0; i<achievementSlider.length;i++){
+            achievementSlider[i] = new AchievementSlider(achievement[i]);
+        }
         
         
         jf= new JFrame("Cat Clicker");
@@ -96,6 +125,14 @@ public class Gui {
         dop.addMouseListener(new MouseHandler());
         dop.addMouseMotionListener(new MouseHandler());
         jf.add(dop);
+        
+        a= new Draw_Achievements();
+        a.setSize(width,height);
+        a.setVisible(true);
+        a.requestFocus();
+        a.addMouseListener(new MouseHandler());
+        a.addMouseMotionListener(new MouseHandler());
+        jf.add(a);
         
         
         
