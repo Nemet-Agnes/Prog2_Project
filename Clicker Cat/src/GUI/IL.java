@@ -10,7 +10,7 @@ import Actions.Main;
 
 public class IL {
     public BufferedImage ibg;
-    public BufferedImage iug[] = new BufferedImage[Main.ugNumber];
+    public BufferedImage iug[] = new BufferedImage[Main.ugNumber-2];
     public BufferedImage iCat1, iCat2;
     
     public IL(){

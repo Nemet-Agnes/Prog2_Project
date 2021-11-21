@@ -8,7 +8,7 @@ public class Main {
     public static double coins = 0;
     public static double cps = 0; // coins per sec
     public static double cpc = 1; // coins per click
-    public static int ugNumber =2; // upgrade number
+    public static int ugNumber =4; // upgrade number
     
     public static int ugClickerCost = 10;
     

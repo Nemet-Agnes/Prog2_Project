@@ -1,7 +1,5 @@
 package GUI;
 
-import GUI.IL;
-import GUI.Button;
 import Draw.Draw_Buttons;
 import Draw.Draw_Main;
 import Draw.Draw_Upgrades;
@@ -21,6 +19,8 @@ public class Gui {
     
     public final int width= 1200;
     public final int height=720;
+    
+    public static int maxHeight, actualHeight=0;
     
     public static Button bUpgrades;
     public static Button bAchievements;
@@ -57,13 +57,20 @@ public class Gui {
             
         }
         
-        upgrade[0]= new Upgrade(150,"Cat Bed!",il.iug[0],0,10);
+        upgrade[0]= new Upgrade(150,"Cat Bed!",il.iug[0],0,50); //
         upgrade[1]= new Upgrade(350,"Cat Tower",il.iug[1],0,100);
+        
+        upgrade[2]= new Upgrade(550,"CatNip",il.iug[0],0,5000);
+        upgrade[3]= new Upgrade(750,"Mousetrap ",il.iug[0],0,50000);
+        
+        maxHeight = (upgrade.length *(150+50));
+        
         
         jf= new JFrame("Cat Clicker");
         jf.setSize(width,height);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jf.setLocationRelativeTo(null);
+        jf.addMouseWheelListener(new MouseHandler());
         jf.setResizable(false);
         
         db= new Draw_Buttons();
@@ -98,7 +105,7 @@ public class Gui {
         d.requestFocus();
         d.addMouseListener(new MouseHandler());
         d.addMouseMotionListener(new MouseHandler());
-        d.addMouseWheelListener(new MouseHandler());
+
         jf.add(d);
         
         

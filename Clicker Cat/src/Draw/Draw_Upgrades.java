@@ -31,6 +31,11 @@ public class Draw_Upgrades extends JLabel{
         
         if(Gui.bUpgrades.isActive()){
             for(int i =0; i<Gui.upgrade.length;i++){
+                
+                if(Gui.upgrade[i].getY()>100){
+                    
+                
+                
                 g.setColor(new Color(43,61,79,150));
                 g.fillRect(Gui.upgrade[i].getX()+1, Gui.upgrade[i].getY(), Gui.upgrade[i].getWidth(), Gui.upgrade[i].getHeight());
                 
@@ -54,7 +59,7 @@ public class Draw_Upgrades extends JLabel{
                 g.drawString(Gui.upgrade[i].getName(), (gui.width/2)+(((gui.width/2)/3)/2)-textWidth/2, Gui.upgrade[i].getY()+110);
                 
                 //Image
-                g.drawImage(il.iug[i], (gui.width/2)+ ((gui.width/2)/3), Gui.upgrade[i].getY(), null);
+                g.drawImage(Gui.upgrade[i].getImage(), (gui.width/2)+ ((gui.width/2)/3), Gui.upgrade[i].getY(), null);
                 
                 //Price
                 String s= df.format(Gui.upgrade[i].getCost());
@@ -74,6 +79,7 @@ public class Draw_Upgrades extends JLabel{
                 textWidth = g.getFontMetrics().stringWidth("Upgrade");
                 g.drawString("Upgrade",(int)((gui.width/2)+((gui.width/2)*(5.0/6.0)) - textWidth/2) ,Gui.upgrade[i].getY()+113);
                 
+              }
             }
         }
         //Upgrade Clicker

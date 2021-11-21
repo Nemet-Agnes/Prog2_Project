@@ -98,7 +98,46 @@ public class MouseHandler implements MouseListener, MouseMotionListener, MouseWh
     
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
-        
+        if(Gui.bUpgrades.isActive()){
+            
+            if(e.getX() > gui.width /2){
+                //scroll down
+                if(e.getWheelRotation() ==1){
+                    Gui.actualHeight -=20;
+                    
+                    if(Gui.actualHeight >= -(Gui.maxHeight -550)){
+                        for( int i= 0; i<Gui.upgrade.length;i++){
+                            int y1 = Gui.upgrade[i].getY()-20;
+                            int y2= Gui.ugButton[i].getY()-20;
+                            
+                            Gui.upgrade[i].setY(y1);
+                            Gui.ugButton[i].setY(y2);
+                            
+                        }
+                    }else{
+                        Gui.actualHeight =-(Gui.maxHeight-550);
+                    }
+                }
+                
+                //scroll up
+                if(e.getWheelRotation() ==-1){
+                    Gui.actualHeight +=20;
+                    
+                    if(Gui.actualHeight <=0){
+                        for(int i=0; i<Gui.upgrade.length;i++){
+                            int y1 = Gui.upgrade[i].getY()+20;
+                            int y2= Gui.ugButton[i].getY()+20;
+                            
+                            Gui.upgrade[i].setY(y1);
+                            Gui.ugButton[i].setY(y2);
+                        }
+                    }else{
+                        Gui.actualHeight = 0;
+                    }
+                    
+                }
+            }
+        }
     }
     
     @Override
