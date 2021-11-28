@@ -1,5 +1,6 @@
 package GUI;
 
+import Actions.Data;
 import Draw.Draw_Buttons;
 import Draw.Draw_Main;
 import Draw.Draw_Upgrades;
@@ -65,6 +66,7 @@ public class Gui {
         
         upgrade[2]= new Upgrade("CatNip",il.iug[2],5000);
         upgrade[3]= new Upgrade("Mousetrap ",il.iug[3],50000);
+//        upgrade[4]= new Upgrade("THE BOX ",il.iug[4],50001);
         
         for(int i=0; i<upgrade.length;i++){
             upgrade[i].setY(Upgrade.setYCoord(i));
@@ -90,10 +92,15 @@ public class Gui {
             xV= temp *50+temp*2;
         }
         
+        Data.setAchievementName();
+        Data.setAchievementText();
+        
         for(int i=0; i<achievementSlider.length;i++){
             achievementSlider[i] = new AchievementSlider(achievement[i]);
         }
-        
+//         for(int i = 0; i<achievementSlider.length;i++){
+//             achievementSlider[i]= new AchievementSlider(achievement[i]);
+//         }
         
         jf= new JFrame("Cat Clicker");
         jf.setSize(width,height);

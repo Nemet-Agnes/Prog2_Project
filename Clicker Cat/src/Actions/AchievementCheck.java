@@ -24,7 +24,7 @@ public class AchievementCheck {
                 // Achievement 2
 				if (!Gui.achievement[1].isUnlocked()) {
 
-					if (Main.coins >= 1000000) {
+					if (Main.coins >= 10) {
 						unlock(Gui.achievement[1], Gui.achievementSlider[1]);
 					}
 				}

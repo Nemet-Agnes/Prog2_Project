@@ -23,6 +23,7 @@ public class Main {
         new CoinCounter();
         
         new AchievementCheck();
+        
     }
     
 }

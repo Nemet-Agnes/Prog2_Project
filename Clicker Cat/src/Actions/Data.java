@@ -122,5 +122,70 @@ public class Data {
         
         
     }
+    public static void loadStart(){
+        
+
+
+               File save = new File("data/save.txt");
+               if(save.exists()){
+                try {
+                    Scanner sc = new Scanner(save);
+                    Main.coins = Double.parseDouble(sc.nextLine());
+                    Main.cpc= Double.parseDouble(sc.nextLine());
+                    Main.cps = Double.parseDouble(sc.nextLine());
+                    Main.ugClickerCost = Integer.parseInt(sc.nextLine());
+                    
+                    for(int i=0; i<Gui.upgrade.length;i++){
+                        Gui.upgrade[i].setNumber(Integer.parseInt(sc.nextLine()));
+                        Gui.upgrade[i].setCost(Integer.parseInt(sc.nextLine()));
+                    }
+                    
+                     Main.clickCount = Integer.parseInt(sc.nextLine());
+                     for(int i=0; i<Main.achievementNumber;i++){
+                         if(sc.nextLine().equals("1")){
+                             Gui.achievement[i].setUnlocked(true);
+                            
+                         }else{
+                             Gui.achievement[i].setUnlocked(false);
+                         }
+                     }
+                    
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    }
+                }
+            }
+    public static void setAchievementText(){
+            File achText = new File("data/achtext.txt");
+            if(achText!=null){
+                try {
+                    Scanner sc = new Scanner (achText);
+                    for(int i =0; i<Main.achievementNumber;i++){
+                        Gui.achievement[i].setText(sc.nextLine());
+                    }
+                } catch (IOException e) {
+                    System.out.println("Nem megy az acsivment");
+                    e.printStackTrace();
+                    
+                }
+            }
+        }
+    public static void setAchievementName(){
+            File achName = new File("data/achname.txt");
+            if(achName!=null){
+                try {
+                    Scanner sc = new Scanner (achName);
+                    for(int i =0; i<Main.achievementNumber;i++){
+                        Gui.achievement[i].setName(sc.nextLine());
+                    }
+                } catch (IOException e) {
+                    System.out.println("Nem megy az acsivmentNÉV");
+                    e.printStackTrace();
+                    
+                }
+            }
+        }
+    }       
+
     
-}
+

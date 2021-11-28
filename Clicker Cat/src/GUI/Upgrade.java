@@ -42,6 +42,9 @@ public class Upgrade {
             case 3:
                 Main.cps +=100;
                 break;
+//            case 4:
+//                Main.cps +=101;
+//                break;
            
         }
     }

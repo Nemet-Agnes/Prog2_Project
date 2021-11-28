@@ -49,6 +49,7 @@ public class MouseHandler implements MouseListener, MouseMotionListener, MouseWh
         if(mc.inside(e.getX(), e.getY(), gui.bCat)){
             Gui.bCat.setActive(true);
             Main.coins += Main.cpc;
+            Main.clickCount++;
         }
         
         
@@ -91,9 +92,9 @@ public class MouseHandler implements MouseListener, MouseMotionListener, MouseWh
         //Cat Button
         if(Gui.bCat.isActive()){
             Gui.bCat.setActive(false);
-            Main.coins += Main.cpc;
+//            Main.coins += Main.cpc;
             
-            Main.clickCount++;
+//            Main.clickCount++;
         }
         
     }
